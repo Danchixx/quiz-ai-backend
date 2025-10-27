@@ -20,7 +20,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = MAX_FILE_SIZE
 
 # API Configuration
-TOGETHER_API_KEY = "f847f9f613890b706171915623e44575b7fe75a3d36612d7f325e3604fc4252a"
+TOGETHER_API_KEY = os.getenv("TOGETHER_API_KEY")
 TOGETHER_URL = "https://api.together.xyz/v1/chat/completions"
 MODEL = "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free"
 
@@ -432,4 +432,5 @@ if __name__ == '__main__':
     logger.info("Starting Enhanced AI Quiz Generator Server")
     logger.info(f"Upload folder: {UPLOAD_FOLDER}")
     logger.info(f"Allowed extensions: {ALLOWED_EXTENSIONS}")
+
     app.run(host='0.0.0.0', port=5000, debug=True)
