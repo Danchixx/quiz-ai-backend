@@ -21,8 +21,8 @@ app.config['MAX_CONTENT_LENGTH'] = MAX_FILE_SIZE
 
 # API Configuration
 TOGETHER_API_KEY = os.getenv("TOGETHER_API_KEY")
-TOGETHER_URL = "https://api.together.xyz/v1/chat/completions"
-MODEL = "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free"
+TOGETHER_API_URL = "https://openrouter.ai/api/v1/chat/completions"
+MODEL_NAME = "meta-llama/llama-3.3-70b-instruct:free"
 
 # Logging setup
 logging.basicConfig(level=logging.INFO)
@@ -434,3 +434,4 @@ if __name__ == '__main__':
     logger.info(f"Allowed extensions: {ALLOWED_EXTENSIONS}")
 
     app.run(host='0.0.0.0', port=5000, debug=True)
+
